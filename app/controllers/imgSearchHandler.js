@@ -1,6 +1,6 @@
 'use strict';
 
-var Searches = require('../models/history.js');
+var Search = require('../models/history.js');
 
 var GoogleSearch = require('google-search');
 var googleSearch = new GoogleSearch({
@@ -15,28 +15,61 @@ var googleSearch = new GoogleSearch({
 function ImgSearchHandler () {
 
 	this.retrieveSearchResults = function (req, res) {
-			
-		console.log(req.params.query);
-		googleSearch.build({
-		  q: req.params.query,
-		  fileType: "png jpg bmp svg",
-		  num: 2, // Number of search results to return between 1 and 10, inclusive	
-		}, function(error, response) {		  
-			var results = [];
-			response.items.forEach(function (element){
-				var url = element.pagemap.cse_image[0].src;
-				var context = element.link;
-				var snippet = element.snippet;
-				var thumbnail = element.pagemap.cse_thumbnail[0].src;
+		var newSearch = new Search();
+		newSearch.term = req.params.query;
+		newSearch.when = new Date();
 
-				var result = {url: url, snippet: snippet, thumbnail: thumbnail, context: context};
-				results.push(result);
+		newSearch.save(function (err){
+			if (err) {throw err;}
+			var offset;
+			if (req.query.offset) {
+				offset = req.query.offset;
+			} else {
+				offset = 1;
+			}
+
+			googleSearch.build({
+			  q: req.params.query,
+			  searchType: "image",
+			  fileType:'png jpg gif jpeg',
+			  num: 10, // Number of search results to return between 1 and 10, inclusive	
+			  start: offset,
+			}, function(error, response) {		
+				if (error)  {
+					throw error;
+				}
 				
+				var results = [];
+				response.items.forEach(function (element){
+					var url = element.link;
+					var context = element.image.contextLink;
+					var snippet = element.snippet;
+					var thumbnail = element.image.thumbnailLink;
+
+					var result = {url: url, snippet: snippet, thumbnail: thumbnail, context: context};
+					results.push(result);
+					
+				});
+
+				res.json(results);
+			  //res.json(response.items);
 			});
-			res.json(results);
-		  //res.json(response.items);
 		});
 
+	}
+
+	this.retrieveLatestSearches = function (req, res) {
+		Search
+			.find({}, {'_id': false})
+			.exec(function (err, search){
+				if (err) {throw err;}
+
+				if (search) {
+					res.json(search);
+				} else {
+					res.send("No searches done yet!");
+				}
+			});
 	}
 
 }

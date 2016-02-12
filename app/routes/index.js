@@ -12,6 +12,9 @@ module.exports = function (app) {
 			res.send("Imagesearch api.");
 		});
 
-	app.route('/imagesearch/:query')
+	app.route('/api/latest/imagesearch')
+		.get(imgSearchHandler.retrieveLatestSearches);
+
+	app.route('/api/imagesearch/:query')
 		.get(imgSearchHandler.retrieveSearchResults);
 }
