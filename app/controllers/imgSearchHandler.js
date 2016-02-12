@@ -29,6 +29,8 @@ function ImgSearchHandler () {
 				offset = 1;
 			}
 
+			res.send('save and retrieve');
+/*
 			googleSearch.build({
 			  q: req.params.query,
 			  searchType: "image",
@@ -56,7 +58,7 @@ function ImgSearchHandler () {
 			  //res.json(response.items);
 			});
 		});
-
+*/
 	}
 
 	this.retrieveLatestSearches = function (req, res) {
