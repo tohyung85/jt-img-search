@@ -16,9 +16,9 @@ function ImgSearchHandler () {
 
 	this.retrieveSearchResults = function (req, res) {
 			
-		console.log("handler called");
+		console.log(req.params.query);
 		googleSearch.build({
-		  q: "lolcats funny",
+		  q: req.params.query,
 		  fileType: "png jpg bmp svg",
 		  num: 2, // Number of search results to return between 1 and 10, inclusive	
 		}, function(error, response) {		  
