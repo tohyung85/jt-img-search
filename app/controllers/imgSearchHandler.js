@@ -20,6 +20,7 @@ function ImgSearchHandler () {
 		newSearch.when = new Date();
 
 		newSearch.save(function (err){
+			console.log("saving...");
 			if (err) {throw err;}
 			var offset;
 			if (req.query.offset) {
