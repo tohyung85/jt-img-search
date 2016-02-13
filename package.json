@@ -17,5 +17,8 @@
     "google-images": "^1.0.0",
     "google-search": "0.0.3",
     "mongoose": "^4.4.2"
+  },
+    "engines": {
+    "node": "5.5.0"
   }
 }
