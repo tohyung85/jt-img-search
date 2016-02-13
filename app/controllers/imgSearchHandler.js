@@ -57,8 +57,9 @@ function ImgSearchHandler () {
 				res.json(results);
 			  //res.json(response.items);
 			});
+*/			
 		});
-*/
+
 	}
 
 	this.retrieveLatestSearches = function (req, res) {
