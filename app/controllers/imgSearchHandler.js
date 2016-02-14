@@ -35,7 +35,7 @@ function ImgSearchHandler () {
 			  q: req.params.query,
 			  searchType: "image",
 			  fileType:'png jpg gif jpeg',
-			  num: 1, // Number of search results to return between 1 and 10, inclusive	
+			  num: 10, // Number of search results to return between 1 and 10, inclusive	
 			  start: offset,
 			}, function(error, response) {		
 				if (error)  {
