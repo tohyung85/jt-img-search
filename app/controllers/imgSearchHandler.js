@@ -4,13 +4,9 @@ var Search = require('../models/history.js');
 
 var GoogleSearch = require('./google-search.js');
 var googleSearch = new GoogleSearch({
-	key: process.env.CUSTOM_SEARCH_CSE,
-	cx: process.env.CUSTOM_SEARCH_KEY
+	key: process.env.CUSTOM_SEARCH_KEY,
+	cx: process.env.CUSTOM_SEARCH_CSE
 });	
-
-//var googleImages = require('google-images');
-
-//var client = googleImages('016910765349500541567:wzjfmdo0uvu', 'AIzaSyBWMUM8BIWcCuvaSJ5YjJPJ-vyYjpxBOzg');
 
 function ImgSearchHandler () {
 
@@ -28,8 +24,6 @@ function ImgSearchHandler () {
 			} else {
 				offset = 1;
 			}
-
-			//res.send('save and retrieve');
 
 			googleSearch.build({
 			  q: req.params.query,
@@ -55,7 +49,6 @@ function ImgSearchHandler () {
 				});
 
 				res.json(results);
-			  //res.json(response.items);
 			});
 			
 		});
@@ -79,13 +72,3 @@ function ImgSearchHandler () {
 }
 
 module.exports = ImgSearchHandler;
-
-//		res.send('check handler');
-
-/*		
-		client.search('google')
-			.then (function (images){
-				console.log('search complete');
-				res.json(images);
-			});
-*/
