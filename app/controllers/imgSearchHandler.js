@@ -4,8 +4,8 @@ var Search = require('../models/history.js');
 
 var GoogleSearch = require('./google-search.js');
 var googleSearch = new GoogleSearch({
-	key: "AIzaSyBWMUM8BIWcCuvaSJ5YjJPJ-vyYjpxBOzg",
-	cx: "016910765349500541567:wzjfmdo0uvu"
+	key: process.env.CUSTOM_SEARCH_CSE,
+	cx: process.env.CUSTOM_SEARCH_KEY
 });	
 
 //var googleImages = require('google-images');
