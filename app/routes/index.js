@@ -9,7 +9,7 @@ module.exports = function (app) {
 
 	app.route('/')
 		.get(function(req, res){
-			res.send("Imagesearch api.");
+			res.sendFile(process.cwd() + "/public/index.html");
 		});
 
 	app.route('/api/latest/imagesearch')

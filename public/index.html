@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>JT Image Search Microservice</title>
+</head>
+
+<body>
+
+	<h1>JT Image Microservice</h1>
+
+	<h2>Allows searching of images</h2>
+	<h3>Example use:</h3>
+	<p>https://jt-img-search.herokuapp.com/api/imagesearch/sarah%20kerrigan?offset=1</p>
+	<p>toggle offset value to get different pages of the search</p>
+	
+	<p>To view search history:</p>
+	<p>https://jt-img-search.herokuapp.com/api/latest/imagesearch</p>
+	
+	<h3>Example search history output:</h3>
+	<p>[{"when":"Sat Feb 13 2016 07:56:38 GMT+0800 (SGT)","term":"haha"},{"when":"Fri Feb 12 2016 23:57:39 GMT+0000 (UTC)","term":"haha"},{"when":"Sat Feb 13 2016 08:01:40 GMT+0800 (SGT)","term":"haha"},{"when":"Sat Feb 13 2016 08:01:44 GMT+0800 (SGT)","term":"haha"},{"when":"Sat Feb 13 2016 08:02:02 GMT+0800 (SGT)","term":"haha"},{"when":"Sat Feb 13 2016 00:03:06 GMT+0000 (UTC)","term":"jim ranor"},{"when":"Sat Feb 13 2016 08:04:03 GMT+0800 (SGT)","term":"haha"},{"when":"Sat Feb 13 2016 08:04:45 GMT+0800 (SGT)","term":"haha"},{"when":"Sat Feb 13 2016 00:06:00 GMT+0000 (UTC)","term":"jim ranor"},{"when":"Sat Feb 13 2016 00:08:13 GMT+0000 (UTC)","term":"jim ranor"},{"when":"Sat Feb 13 2016 08:18:06 GMT+0800 (SGT)","term":"1984"},{"when":"Sat Feb 13 2016 03:23:05 GMT+0000 (UTC)","term":"jim ranor"},{"when":"Sat Feb 13 2016 15:12:06 GMT+0800 (SGT)","term":"1984"},{"when":"Sun Feb 14 2016 10:39:20 GMT+0800 (SGT)","term":"1984"},{"when":"Sun Feb 14 2016 02:39:47 GMT+0000 (UTC)","term":"jim ranor"},{"when":"Sun Feb 14 2016 11:00:17 GMT+0800 (SGT)","term":"1984"},{"when":"Sun Feb 14 2016 03:01:34 GMT+0000 (UTC)","term":"jim ranor"},{"when":"Sun Feb 14 2016 03:01:35 GMT+0000 (UTC)","term":"jim ranor"},{"when":"Sun Feb 14 2016 03:03:40 GMT+0000 (UTC)","term":"jim ranor"},{"when":"Sun Feb 14 2016 03:04:10 GMT+0000 (UTC)","term":"sarah kerrigan"},{"when":"Sun Feb 14 2016 03:04:20 GMT+0000 (UTC)","term":"sarah kerrigan"},{"when":"Sun Feb 14 2016 03:04:25 GMT+0000 (UTC)","term":"sarah kerrigan"},{"when":"Sun Feb 14 2016 03:10:07 GMT+0000 (UTC)","term":"lunch"},{"when":"Sun Feb 14 2016 11:13:39 GMT+0800 (SGT)","term":"1984"},{"when":"Sun Feb 14 2016 11:14:12 GMT+0800 (SGT)","term":"1984"},{"when":"Sun Feb 14 2016 11:17:47 GMT+0800 (SGT)","term":"oil"},{"when":"Sun Feb 14 2016 03:19:49 GMT+0000 (UTC)","term":"flying fox"},{"when":"Sun Feb 14 2016 03:25:28 GMT+0000 (UTC)","term":"sarah kerrigan"}]</p>
+
+	<h3>Example output for search:</h3>
+	<p>[{"url":"http://vignette3.wikia.nocookie.net/starcraft/images/9/9e/SarahKerrigan_SC2_Art1.jpg/revision/latest/scale-to-width-down/225?cb=20100812025859","snippet":"Raynor's vidsnap of Kerrigan.","thumbnail":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSbi9vdqMbfL9XP3gABbSkmEE9kP3z7jvJFso4tkawr-0_veWrKAi2hTQ","context":"http://starcraft.wikia.com/wiki/Infested_Kerrigan"},{"url":"http://starcraft2ultimateguide.weebly.com/uploads/6/8/7/1/6871491/1585139_orig.jpg?250","snippet":"Round 1:Ghost Kerrigan vs Jean","thumbnail":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRpRoljCPPA7ziJkfNooUP4KaT6aPxSYyV21GaYFcAhNGyqVi9TLizabeRg","context":"http://animevice.boards.net/thread/3908/sarah-kerrigan-jean-grey-beerus"},{"url":"http://images2.wikia.nocookie.net/starcraft/images/9/9e/SarahKerrigan_SC2_Art1.jpg","snippet":"Sarah Kerrigan high res art?","thumbnail":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQCi6q2TcmBGLv82PodeajYbYPP2AnOoU6jcz8y5slNMbTepKLp-TtTk2Uk","context":"http://us.battle.net/sc2/en/forum/topic/628253455"},{"url":"https://i.ytimg.com/vi/IZLunZBp-vs/maxresdefault.jpg","snippet":"Kerrigan rescues Jim -","thumbnail":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF7m5ejHzpRPaYtCWFOkQrXEsfMHJLtyCYwQ2lMuQ9TgYqwpwdeSfaVr4","context":"https://www.youtube.com/watch?v=IZLunZBp-vs"},{"url":"http://orig15.deviantart.net/56c9/f/2014/111/f/9/sarah_kerrigan_human_by_shyngyskhan-d7fdlpr.jpg","snippet":"Sarah Kerrigan human by Poster","thumbnail":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTm_Tww22fNOaHBsroctt852LYVQ6aTicZhKEG74Pyr59VbkI11FfGtrLU","context":"http://wallpart.com/poster/sarah-kerrigan-human-by-14591748243"},{"url":"https://i.ytimg.com/vi/c7e_nHb0k90/maxresdefault.jpg","snippet":"Ita | Sarah Kerrigan & Jim","thumbnail":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSgOfC5tyIqfJfTq_l3_0jaihKpI_q9EvOee9szEbpa1Cild-CPRytOuHst","context":"https://www.youtube.com/watch?v=c7e_nHb0k90"},{"url":"http://vignette4.wikia.nocookie.net/starcraft/images/0/06/SarahKerrigan_HotS_Screen1.jpg/revision/latest?cb=20130124175641","snippet":"Kerrigan at tier 1","thumbnail":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT45c3un1mDI6J2fR78AiApvih9wkHJp2vJYt0dD7BA4sY8VDj-k8DsvB5U","context":"http://starcraft.wikia.com/wiki/Sarah_Kerrigan_(Heart_of_the_Swarm)"},{"url":"https://i.ytimg.com/vi/fuM2XZrpIsk/maxresdefault.jpg","snippet":"Ita | Sarah Kerrigan & Jim","thumbnail":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQGqx2J0Lzctp7mGH3kLyTFXCuN107pIIPRfqmxzqUsWHSH6rqQz2CKuWo","context":"https://www.youtube.com/watch?v=fuM2XZrpIsk"},{"url":"http://buzzerg.com/wp-content/uploads/8589130486090-sarah-kerrigan-starcraft-wallpaper-hd.jpg","snippet":"sarah kerrigan starcraft","thumbnail":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS7sifFIsvnyQ0n-mrLTPth1nJukU0q6qNAlGZE3pzMyQkWcLxYCMT-AIXZ","context":"http://buzzerg.com/145512-sarah-kerrigan-starcraft-id-86090.htm"},{"url":"http://vignette1.wikia.nocookie.net/deadliestfiction/images/0/04/Thumb_big_hd_eefdbace941aa6cd11cc24fe577f5964.jpg/revision/latest?cb=20130615041434","snippet":"Indeed which rekt who?","thumbnail":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJP8w_srxndaRFpumSqtZxYYA09gihRpqJ7E9tNQRCWwVD6dYWvFa3LIr","context":"https://forums.spacebattles.com/threads/sarah-kerrigan-sc-vs-darth-sidious-sw-legends-canon.371570/"}]</p>
+
+</body>
+
+
+</html>
