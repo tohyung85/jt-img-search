@@ -2,7 +2,7 @@
 
 var Search = require('../models/history.js');
 
-var GoogleSearch = require('google-search');
+var GoogleSearch = require('./google-search.js');
 var googleSearch = new GoogleSearch({
 	key: "AIzaSyBWMUM8BIWcCuvaSJ5YjJPJ-vyYjpxBOzg",
 	cx: "016910765349500541567:wzjfmdo0uvu"
