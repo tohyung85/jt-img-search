@@ -16,7 +16,6 @@ function ImgSearchHandler () {
 		newSearch.when = new Date();
 
 		newSearch.save(function (err){
-			console.log("saving...");
 			if (err) {throw err;}
 			var offset;
 			if (req.query.offset) {
@@ -30,7 +29,7 @@ function ImgSearchHandler () {
 			  searchType: "image",
 			  fileType:'png jpg gif jpeg',
 			  num: 10, // Number of search results to return between 1 and 10, inclusive	
-			  start: offset,
+			  start: offset * 10,
 			}, function(error, response) {		
 				if (error)  {
 					throw error;
